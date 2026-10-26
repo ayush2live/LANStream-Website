@@ -60,21 +60,15 @@
     <!-- Hero Section -->
     <header class="hero" id="overview">
         <div class="hero-container">
-            <div style="display: flex; justify-content: center; align-items: center; gap: 18px; margin-bottom: 24px;">
-                <div style="text-align: center;">
-                    <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width: 68px; height: 68px; border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35); border: 2px solid rgba(0, 229, 255, 0.4); display: block; margin: 0 auto 6px;">
-                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--cyan-accent); letter-spacing: 0.5px;">MOBILE</span>
-                </div>
-                <div style="width: 32px; height: 2px; background: linear-gradient(90deg, var(--cyan-accent), var(--blue-accent)); opacity: 0.6; margin-bottom: 16px;"></div>
-                <div style="text-align: center;">
-                    <img src="assets/tv_logo.png" alt="LANStream TV" style="width: 68px; height: 68px; border-radius: 18px; box-shadow: 0 8px 24px rgba(127, 82, 255, 0.35); border: 2px solid rgba(127, 82, 255, 0.4); display: block; margin: 0 auto 6px;">
-                    <span style="font-size: 0.75rem; font-weight: 600; color: #a78bfa; letter-spacing: 0.5px;">TV</span>
-                </div>
-            </div>
-
-            <div class="hero-badge">
+            <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px;">
+                <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width: 20px; height: 20px; border-radius: 5px; object-fit: contain;">
+                <span style="color: var(--cyan-accent); font-weight: 600; font-size: 0.82rem;">Mobile</span>
+                <span style="color: var(--text-muted); opacity: 0.5;">•</span>
+                <img src="assets/tv_logo.png" alt="LANStream TV" style="width: 20px; height: 20px; border-radius: 5px; object-fit: contain;">
+                <span style="color: #a78bfa; font-weight: 600; font-size: 0.82rem;">TV</span>
+                <span style="color: var(--text-muted); opacity: 0.5;">•</span>
                 <span class="pulsing-dot"></span>
-                <span>Proprietary Software • Initial v1.0.0 Release</span>
+                <span>Proprietary Software • Initial v1.0.0</span>
             </div>
             
             <h1 class="hero-title">
@@ -237,9 +231,9 @@
                 <div class="showcase-item glass-panel">
                     <div class="showcase-header">
                         <div class="badge-module"><i class="fa-solid fa-mobile-screen"></i> :mobile</div>
-                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                            <img src="assets/mobile_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:7px; object-fit:contain;">
-                            <h3 style="margin-bottom:0;">LANStream Mobile</h3>
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                            <img src="assets/mobile_logo.png" alt="Logo" style="width:20px; height:20px; border-radius:5px; object-fit:contain;">
+                            <h3 style="margin-bottom:0; font-size:1.25rem;">LANStream Mobile</h3>
                         </div>
                         <p>Real-time server status, dual protocol switches, client metrics, and quick QR scanner launcher.</p>
                     </div>
@@ -253,9 +247,9 @@
                 <div class="showcase-item glass-panel">
                     <div class="showcase-header">
                         <div class="badge-module"><i class="fa-solid fa-tv"></i> :tv</div>
-                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                            <img src="assets/tv_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:7px; object-fit:contain;">
-                            <h3 style="margin-bottom:0;">LANStream TV</h3>
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                            <img src="assets/tv_logo.png" alt="Logo" style="width:20px; height:20px; border-radius:5px; object-fit:contain;">
+                            <h3 style="margin-bottom:0; font-size:1.25rem;">LANStream TV</h3>
                         </div>
                         <p>Leanback D-Pad file grid, dynamic QR pairing broadcaster, and responsive theme backdrops.</p>
                     </div>
@@ -349,9 +343,9 @@
             <div class="tab-content active glass-panel" id="tab-mobile">
                 <div class="tab-content-grid">
                     <div>
-                        <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px;">
-                            <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width:44px; height:44px; border-radius:12px; object-fit:contain; box-shadow: 0 0 12px var(--cyan-glow);">
-                            <h3 style="margin-bottom:0;">LANStream Mobile</h3>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+                            <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width:26px; height:26px; border-radius:6px; object-fit:contain; box-shadow: 0 0 8px var(--cyan-glow);">
+                            <h3 style="margin-bottom:0; font-size:1.3rem;">LANStream Mobile</h3>
                         </div>
                         <p class="lead-text">Turns your Android smartphone into an ultra-fast, energy-efficient local media streaming station.</p>
                         
@@ -406,9 +400,9 @@
             <div class="tab-content glass-panel" id="tab-tv">
                 <div class="tab-content-grid">
                     <div>
-                        <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px;">
-                            <img src="assets/tv_logo.png" alt="LANStream TV" style="width:44px; height:44px; border-radius:12px; object-fit:contain; box-shadow: 0 0 12px rgba(127, 82, 255, 0.4);">
-                            <h3 style="margin-bottom:0;">LANStream TV</h3>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+                            <img src="assets/tv_logo.png" alt="LANStream TV" style="width:26px; height:26px; border-radius:6px; object-fit:contain; box-shadow: 0 0 8px rgba(127, 82, 255, 0.4);">
+                            <h3 style="margin-bottom:0; font-size:1.3rem;">LANStream TV</h3>
                         </div>
                         <p class="lead-text">Crafted exclusively for 10-foot television screens, remote D-Pad navigation, and low-memory TV hardware.</p>
                         
@@ -456,9 +450,9 @@
                             <tr><td>Target Hardware</td><td><code>Android TV / Google TV (API 26+)</code></td></tr>
                         </table>
 
-                        <div style="margin-top: 20px; text-align: center;">
-                            <img src="assets/tv_banner.png" alt="LANStream TV Leanback Banner" style="width: 100%; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;"><i class="fa-solid fa-tv"></i> Android TV Leanback Banner</span>
+                        <div style="margin-top: 16px; text-align: center;">
+                            <img src="assets/tv_banner.png" alt="LANStream TV Leanback Banner" style="width: 100%; max-width: 220px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 16px rgba(0,0,0,0.5);">
+                            <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;"><i class="fa-solid fa-tv"></i> Android TV Leanback Banner</span>
                         </div>
                     </div>
                 </div>
