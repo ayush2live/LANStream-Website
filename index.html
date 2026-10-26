@@ -14,6 +14,9 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/mobile_logo.png">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,7 +30,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="brand-logo">
-                <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <img src="assets/mobile_logo.png" alt="LANStream Logo" class="brand-logo-img">
                 <div class="logo-text">LAN<span>Stream</span></div>
             </a>
             
@@ -57,6 +60,18 @@
     <!-- Hero Section -->
     <header class="hero" id="overview">
         <div class="hero-container">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 18px; margin-bottom: 24px;">
+                <div style="text-align: center;">
+                    <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width: 68px; height: 68px; border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35); border: 2px solid rgba(0, 229, 255, 0.4); display: block; margin: 0 auto 6px;">
+                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--cyan-accent); letter-spacing: 0.5px;">MOBILE</span>
+                </div>
+                <div style="width: 32px; height: 2px; background: linear-gradient(90deg, var(--cyan-accent), var(--blue-accent)); opacity: 0.6; margin-bottom: 16px;"></div>
+                <div style="text-align: center;">
+                    <img src="assets/tv_logo.png" alt="LANStream TV" style="width: 68px; height: 68px; border-radius: 18px; box-shadow: 0 8px 24px rgba(127, 82, 255, 0.35); border: 2px solid rgba(127, 82, 255, 0.4); display: block; margin: 0 auto 6px;">
+                    <span style="font-size: 0.75rem; font-weight: 600; color: #a78bfa; letter-spacing: 0.5px;">TV</span>
+                </div>
+            </div>
+
             <div class="hero-badge">
                 <span class="pulsing-dot"></span>
                 <span>Proprietary Software • Initial v1.0.0 Release</span>
@@ -130,8 +145,13 @@
                         <span class="release-tag"><i class="fa-solid fa-check"></i> v1.0.0 Stable</span>
                         <span class="badge-module"><i class="fa-solid fa-mobile-screen"></i> Android Phone / Tablet</span>
                     </div>
-                    <h3>LANStream Mobile</h3>
-                    <span class="file-name"><i class="fa-solid fa-box-archive"></i> LANStream-Mobile.apk</span>
+                    <div class="download-card-title-row">
+                        <img src="assets/mobile_logo.png" alt="LANStream Mobile Logo" class="app-card-logo">
+                        <div>
+                            <h3>LANStream Mobile</h3>
+                            <span class="file-name"><i class="fa-solid fa-box-archive"></i> LANStream-Mobile.apk</span>
+                        </div>
+                    </div>
                     <p>Hosts your phone's storage over Ktor HTTP (port 8080) and Apache MINA FTP (port 2121). Includes CameraX barcode scanner for 1-second TV pairing.</p>
                     
                     <ul class="download-specs-list">
@@ -151,8 +171,13 @@
                         <span class="release-tag"><i class="fa-solid fa-check"></i> v1.0.0 Stable</span>
                         <span class="badge-module"><i class="fa-solid fa-tv"></i> Android TV / Google TV</span>
                     </div>
-                    <h3>LANStream TV</h3>
-                    <span class="file-name"><i class="fa-solid fa-box-archive"></i> LANStream-TV.apk</span>
+                    <div class="download-card-title-row">
+                        <img src="assets/tv_logo.png" alt="LANStream TV Logo" class="app-card-logo">
+                        <div>
+                            <h3>LANStream TV</h3>
+                            <span class="file-name"><i class="fa-solid fa-box-archive"></i> LANStream-TV.apk</span>
+                        </div>
+                    </div>
                     <p>Hardware-accelerated Media3 ExoPlayer player with proprietary FtpDataSource range seeker, D-Pad navigation, and on-screen QR broadcaster.</p>
                     
                     <ul class="download-specs-list">
@@ -212,7 +237,10 @@
                 <div class="showcase-item glass-panel">
                     <div class="showcase-header">
                         <div class="badge-module"><i class="fa-solid fa-mobile-screen"></i> :mobile</div>
-                        <h3>LANStream Mobile</h3>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                            <img src="assets/mobile_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:7px; object-fit:contain;">
+                            <h3 style="margin-bottom:0;">LANStream Mobile</h3>
+                        </div>
                         <p>Real-time server status, dual protocol switches, client metrics, and quick QR scanner launcher.</p>
                     </div>
                     <div class="image-wrapper" onclick="openLightbox('assets/mobile_screen.png', 'LANStream Mobile Interface')">
@@ -225,7 +253,10 @@
                 <div class="showcase-item glass-panel">
                     <div class="showcase-header">
                         <div class="badge-module"><i class="fa-solid fa-tv"></i> :tv</div>
-                        <h3>LANStream TV</h3>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                            <img src="assets/tv_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:7px; object-fit:contain;">
+                            <h3 style="margin-bottom:0;">LANStream TV</h3>
+                        </div>
                         <p>Leanback D-Pad file grid, dynamic QR pairing broadcaster, and responsive theme backdrops.</p>
                     </div>
                     <div class="image-wrapper" onclick="openLightbox('assets/tv_screen.png', 'LANStream TV Interface')">
@@ -318,7 +349,10 @@
             <div class="tab-content active glass-panel" id="tab-mobile">
                 <div class="tab-content-grid">
                     <div>
-                        <h3>📱 LANStream Mobile</h3>
+                        <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px;">
+                            <img src="assets/mobile_logo.png" alt="LANStream Mobile" style="width:44px; height:44px; border-radius:12px; object-fit:contain; box-shadow: 0 0 12px var(--cyan-glow);">
+                            <h3 style="margin-bottom:0;">LANStream Mobile</h3>
+                        </div>
                         <p class="lead-text">Turns your Android smartphone into an ultra-fast, energy-efficient local media streaming station.</p>
                         
                         <div class="feature-checklist">
@@ -372,7 +406,10 @@
             <div class="tab-content glass-panel" id="tab-tv">
                 <div class="tab-content-grid">
                     <div>
-                        <h3>📺 LANStream TV</h3>
+                        <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px;">
+                            <img src="assets/tv_logo.png" alt="LANStream TV" style="width:44px; height:44px; border-radius:12px; object-fit:contain; box-shadow: 0 0 12px rgba(127, 82, 255, 0.4);">
+                            <h3 style="margin-bottom:0;">LANStream TV</h3>
+                        </div>
                         <p class="lead-text">Crafted exclusively for 10-foot television screens, remote D-Pad navigation, and low-memory TV hardware.</p>
                         
                         <div class="feature-checklist">
@@ -418,6 +455,11 @@
                             <tr><td>Subtitle Support</td><td><code>Embedded SRT, ASS, SSA, VTT</code></td></tr>
                             <tr><td>Target Hardware</td><td><code>Android TV / Google TV (API 26+)</code></td></tr>
                         </table>
+
+                        <div style="margin-top: 20px; text-align: center;">
+                            <img src="assets/tv_banner.png" alt="LANStream TV Leanback Banner" style="width: 100%; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;"><i class="fa-solid fa-tv"></i> Android TV Leanback Banner</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -687,7 +729,7 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <img src="assets/mobile_logo.png" alt="LANStream Logo" class="brand-logo-img">
                     <div class="logo-text">LAN<span>Stream</span></div>
                 </div>
                 <p>High-performance offline local media streaming ecosystem for Android and Android TV.</p>
