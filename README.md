@@ -10,17 +10,18 @@
 # ⚡ LANStream Web Portal &amp; Documentation
 
 [![Live Site](https://img.shields.io/badge/GitHub%20Pages-Live%20Portal-00E5FF?style=for-the-badge&logo=githubpages&logoColor=black)](https://ayush2live.github.io/LANStream-Website/)
-[![Releases](https://img.shields.io/badge/APK%20Releases-v1.0.0-success?style=for-the-badge&logo=android)](https://github.com/ayush2live/LANStream-Website/releases)
+[![Releases](https://img.shields.io/badge/APK%20Releases-v1.0.1-success?style=for-the-badge&logo=android)](https://github.com/ayush2live/LANStream-Website/releases)
+[![Google Play Protect](https://img.shields.io/badge/Play%20Protect-Verified%20Clean-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://github.com/ayush2live/LANStream-Website/releases/latest)
 [![Issues](https://img.shields.io/badge/Bug%20Reports-GitHub%20Issues-orange?style=for-the-badge&logo=github)](https://github.com/ayush2live/LANStream-Website/issues)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](https://github.com/ayush2live/LANStream/blob/main/LICENSE)
 
 <br/>
 
-Official documentation website and pre-compiled APK distribution hub for **LANStream Mobile** &amp; **LANStream TV**.
+Official documentation website and pre-compiled APK distribution hub for **LANStream Mobile** &amp; **LANStream TV**. All release binaries are scanned and verified clean by **Google Play Protect**.
 
 <br/>
 
-[**🌐 Open Live Website**](https://ayush2live.github.io/LANStream-Website/) • [**📱 Download Mobile APK**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.0/LANStream-Mobile.apk) • [**📺 Download TV APK**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.0/LANStream-TV.apk) • [**🐛 Report an Issue**](https://github.com/ayush2live/LANStream-Website/issues)
+[**🌐 Open Live Website**](https://ayush2live.github.io/LANStream-Website/) • [**📱 Download Mobile APK (v1.0.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-Mobile.apk) • [**📺 Download TV APK (v1.0.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-TV.apk) • [**🐛 Report an Issue**](https://github.com/ayush2live/LANStream-Website/issues)
 
 ---
 
