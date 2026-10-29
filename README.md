@@ -205,6 +205,6 @@ LANStream GitHub release channels.
 ---
 
 <div align="center">
-  <b>Built by Ayush (<a href="https://github.com/ayush2live">@ayush2live</a>)</b><br/>
+  <b>Built by Ayush Singh (<a href="https://github.com/ayush2live">@ayush2live</a>)</b><br/>
   <i>Engineered for cinematic offline streaming with zero latency and zero cloud costs.</i>
 </div>
