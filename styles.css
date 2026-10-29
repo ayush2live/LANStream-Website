@@ -1013,6 +1013,8 @@ body {
 .badge.red { background: rgba(255, 82, 82, 0.15); color: var(--red-accent); }
 .badge.purple { background: rgba(140, 82, 255, 0.15); color: var(--purple-accent); }
 .badge.green { background: rgba(0, 230, 118, 0.15); color: var(--green-accent); }
+.badge.amber { background: rgba(251, 191, 36, 0.18); color: #fbbf24; }
+.badge.orange { background: rgba(249, 115, 22, 0.18); color: #f97316; }
 
 /* Deployment Cards */
 .deployment-cards-grid {
