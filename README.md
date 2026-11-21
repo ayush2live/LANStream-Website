@@ -27,7 +27,7 @@
 <br/>
 
 > [!NOTE]
-> **🛡️ Google Play Protect Verified Clean • v1.1 Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or malicious code. Version 1.1 brings the powerful LibVLC media player engine, Nova-style directory browsing (Grid/List views), and smart resume playback with TV D-pad prompts.
+> **🛡️ Google Play Protect Verified Clean • v1.1 Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or malicious code. Version 1.1 brings the powerful LibVLC media player engine, Nova-style directory browsing (Grid/List views), smart resume playback with TV D-pad prompts, and optimized R8 Single-DEX compilation.
 
 <br/>
 
@@ -46,7 +46,7 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 | Application | Target Hardware | Min OS | Package Asset | Direct Download |
 | :--- | :--- | :--- | :--- | :---: |
 | **📱 LANStream Mobile** | Android Smartphones &amp; Tablets | Android 8.0+ (API 26+) | `LANStream-Mobile.apk` (~43.7 MB) | [**Download Mobile APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-Mobile.apk) |
-| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV.apk` (~91.9 MB) | [**Download TV APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV.apk) |
+| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV.apk` (~86.5 MB, Single-DEX) | [**Download TV APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV.apk) |
 
 > [!TIP]
 > **Zero Compilation Required**: These APKs are production-ready binaries. Simply download and sideload directly onto your phone and television.
@@ -134,6 +134,7 @@ Connect your PC to your TV over Wi-Fi and install with one command:
 ```powershell
 adb connect <your-tv-ip>:5555
 adb install -r LANStream-TV.apk
+adb shell cmd package compile -m speed -f com.lanstream.tv
 ```
 
 ---
@@ -175,7 +176,7 @@ sequenceDiagram
 
 ## 🐛 Bug Reporting & Feedback
 
-As this is our active **v1.0.1** release across diverse Android smartphone and TV hardware, your feedback is invaluable:
+As this is our active **v1.1** release across diverse Android smartphone and TV hardware, your feedback is invaluable:
 
 * If you encounter playback stutter, codec incompatibilities, or UI focus bugs on your TV model:
   👉 [**Open a Ticket on GitHub Issues**](https://github.com/ayush2live/LANStream-Website/issues/new)

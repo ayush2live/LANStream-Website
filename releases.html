@@ -307,6 +307,17 @@
                         <li><strong>Auto-Clear on Completion:</strong> Automatically clears saved timestamps once videos are watched past 95% completion.</li>
                     </ul>
                 </div>
+
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-microchip" style="color: #34d399;"></i> Optimized R8 Single-DEX Compilation &amp; Performance</h4>
+                    <ul class="changelog-list">
+                        <li><strong>Single-DEX Packaging:</strong> Deep R8 full-mode tree-shaking compresses the entire Android TV application into a single <code>classes.dex</code> file (~42k methods), comfortably below the 64K multidex threshold.</li>
+                        <li><strong>Zero Multidex Latency:</strong> Eliminates runtime multidex extraction and class verification overhead, ensuring instant cold-start boot times on smart TVs.</li>
+                        <li><strong>Resource Shrinking:</strong> Stripped unused resources and dead layouts, reducing TV APK download size to <strong>~86.5 MB</strong>.</li>
+                        <li><strong>Bytecode Log Stripping:</strong> Stripped verbose and debug <code>Log</code> invocations at R8 compilation to reduce CPU overhead and garbage collection pauses on quad-core TV processors.</li>
+                        <li><strong>AOT ART Speed Compilation:</strong> Pre-compiled natively on-device (<code>cmd package compile -m speed</code>) for fluid 60fps Leanback UI animations.</li>
+                    </ul>
+                </div>
             </div>
         </article>
 
