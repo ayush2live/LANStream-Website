@@ -82,10 +82,11 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 
 | Challenge | Traditional Solutions (Miracast / Plex / DLNA) | The LANStream Proprietary Approach |
 | :--- | :--- | :--- |
-| **Internet Bandwidth Limits** | Uploading gigabytes to cloud services eats daily ISP data quotas. | **100% Offline LAN / Wi-Fi Direct / Hotspot.** Zero internet consumed. Uncapped local bandwidth (up to 300+ Mbps). |
-| **Casting / Mirroring Lag** | Miracast/Chromecast compress the screen, causing battery drain, dropped frames, and latency. | **Direct Bitstream Streaming.** TV decodes raw bitstreams natively using hardware-accelerated Media3 ExoPlayer. Phone screen can sleep normally. |
-| **TV Remote Typing Fatigue** | Typing IP addresses (`192.168.1.xxx`) and passwords via TV remote is tedious and error-prone. | **Zero-Config Instant QR Pairing.** TV displays a dynamic payload QR; phone scans it with ML Kit and syncs credentials in under 300ms. |
-| **FTP Range Seeking** | Standard media players require downloading the full file or fail when scrubbing large MKVs. | **Custom `FtpDataSource`.** Implements partial-byte range seeking directly over FTP `REST` commands, matching HTTP Range performance. |
+| **Internet Bandwidth Limits** | Uploading gigabytes to cloud services eats daily ISP data quotas, requiring active internet. | **100% Offline LAN / Wi-Fi Direct / Hotspot.** Zero internet consumed. Uncapped local bandwidth (up to 300+ Mbps) working completely offline. |
+| **Casting / Mirroring Lag** | Miracast/Chromecast compress the phone screen, causing battery drain, dropped frames, and latency. | **Direct Bitstream Streaming.** Untouched files stream directly to TV hardware decoding via **LibVLC 3.6.2** (`mediacodec_ndk` / `mediacodec_jni`) with full 10-bit HEVC and ASS/SSA subtitles. Phone screen can sleep normally. |
+| **TV Remote Typing Fatigue** | Typing IP addresses (`192.168.1.xxx`) and passwords via TV remote is tedious and error-prone. | **Zero-Config Instant QR Pairing.** TV displays a dynamic payload QR; phone scans it with CameraX + Google ML Kit and syncs credentials in under 300ms. |
+| **Network Seeking & Scrubbing** | Standard media players require downloading the full file or freeze/buffer indefinitely when scrubbing large MKVs over Wi-Fi. | **Dual-Protocol Byte-Range & Debounced Seeking.** Native HTTP 206 Partial Content and FTP `REST` byte offsets, paired with hold-to-accelerate debouncing (10s &rarr; 30s &rarr; 60s with 400ms commit) to eliminate socket stalls. |
+| **Budget TV Performance** | Bloated media players (Plex, Kodi) consume 1GB+ RAM and cause UI stutter or OOM crashes on low-spec TVs. | **R8 Full-Mode Single-DEX Engine.** Stripped to a single `classes.dex` under the 64K limit with zero multidex latency, native AOT compilation, and 60fps Compose Leanback UI. |
 
 ---
 
@@ -213,7 +214,7 @@ LANStream Ecosystem — Proprietary & Confidential Software
 Copyright © 2026 LANStream Ecosystem. All Rights Reserved.
 
 This software, its source code, compiled binaries, architectural patterns,
-and proprietary algorithms (including FtpDataSource range-seeking pipelines)
+and proprietary algorithms (including dual-protocol byte-range seeking and debounced streaming pipelines)
 are the exclusive intellectual property of the author.
 
 Unauthorized copying, decompilation, reverse engineering, redistribution,
