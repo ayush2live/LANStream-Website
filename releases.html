@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Releases &amp; Changelog — LANStream Mobile &amp; TV</title>
+    <meta name="description" content="Download official signed APK releases of LANStream Mobile and LANStream TV. View release notes, changelogs, SHA-256 checksums, and sideloading instructions.">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/mobile_logo.png">
+    
+    <link rel="stylesheet" href="styles.css?v=1.1.0">
+    <style>
+        .release-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+        .release-card-featured {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            margin-bottom: 48px;
+            position: relative;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.08);
+        }
+        .release-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 28px;
+        }
+        .release-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .release-version-pill {
+            background: linear-gradient(135deg, #00e5ff, #3d5afe);
+            color: #000;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        .release-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .changelog-section {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+        .changelog-category {
+            margin-bottom: 24px;
+        }
+        .changelog-category h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .changelog-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .changelog-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .changelog-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--cyan-accent);
+            font-weight: bold;
+        }
+        .checksum-bar {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 14px;
+            overflow-x: auto;
+        }
+        .checksum-code {
+            color: #38bdf8;
+            word-break: break-all;
+        }
+        .btn-copy-hash {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            white-space: nowrap;
+        }
+        .btn-copy-hash:hover {
+            background: var(--cyan-accent);
+            color: #000;
+        }
+        .prev-release-item {
+            background: rgba(18, 24, 38, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: var(--transition-fast);
+        }
+        .prev-release-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(24, 32, 50, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/mobile_logo.png" alt="LANStream Logo" class="brand-logo-img">
+                <div class="logo-text">LAN<span>Stream</span></div>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#downloads">Downloads</a></li>
+                <li><a href="index.html#showcase">Showcase</a></li>
+                <li><a href="releases.html" style="color: var(--cyan-accent); font-weight: 700;">Releases</a></li>
+                <li><a href="index.html#story">Story</a></li>
+                <li><a href="index.html#architecture">Architecture</a></li>
+                <li><a href="index.html#tools">Tools</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/ayush2live/LANStream-Website/releases" class="btn btn-github" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Releases</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Release Hero -->
+    <header class="release-hero">
+        <div class="container">
+            <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; margin-bottom: 16px;">
+                <i class="fa-solid fa-tag" style="color: var(--cyan-accent);"></i>
+                <span style="font-weight: 600; font-size: 0.85rem;">Official Production Release Hub</span>
+            </div>
+            <h1 class="hero-title" style="font-size: 2.6rem;">
+                Releases &amp; <span class="gradient-text">Version History</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 680px; margin: 12px auto 0;">
+                Download official, pre-compiled, and signed APK packages for LANStream Mobile and LANStream TV. All binaries are verified clean by Google Play Protect with zero ads and zero trackers.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container" style="max-width: 1040px; padding-bottom: 100px;">
+
+        <!-- FEATURED LATEST RELEASE: v1.1 -->
+        <article class="release-card-featured glass-panel">
+            <div class="release-header-row">
+                <div class="release-title-group">
+                    <span class="release-version-pill"><i class="fa-solid fa-star"></i> v1.1</span>
+                    <div>
+                        <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff;">LANStream v1.1 Stable</h2>
+                        <span class="release-date"><i class="fa-regular fa-calendar"></i> November 21, 2026 • Latest Production Release</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <span class="badge" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.4);">
+                        <i class="fa-solid fa-shield-halved"></i> Google Play Protect Verified Safe
+                    </span>
+                    <span class="badge" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3);">
+                        <i class="fa-solid fa-bolt"></i> LibVLC Media Engine
+                    </span>
+                </div>
+            </div>
+
+            <!-- APK Downloads Grid for v1.1 -->
+            <div class="grid grid-2" style="margin-bottom: 28px;">
+                <!-- TV APK Card -->
+                <div class="download-card tv-card" style="margin-bottom: 0;">
+                    <div class="download-badge-row">
+                        <span class="release-tag"><i class="fa-solid fa-tv"></i> Android TV / Google TV</span>
+                        <span class="badge" style="background: rgba(140, 82, 255, 0.15); color: #c4b5fd;">~91.9 MB</span>
+                    </div>
+                    <div class="download-card-title-row">
+                        <img src="assets/tv_logo.png" alt="LANStream TV Logo" class="app-card-logo">
+                        <div>
+                            <h3>LANStream TV</h3>
+                            <span class="file-name">LANStream-TV.apk</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-bottom: 14px;">
+                        Powered by LibVLC 3.6.2. Supports 10-bit HEVC, MKV cues/chapters, ASS/SSA subtitles, multi-track audio switching (Hindi 5.1/English), Nova-style directory browsing, and smart resume playback.
+                    </p>
+                    <a href="https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV.apk" class="btn-download-apk" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download LANStream TV APK (v1.1)
+                    </a>
+                    <div class="checksum-bar">
+                        <span>SHA-256: <code class="checksum-code" id="tvSha">2b1e333a7cf31a8cedb96c2795623cd32638443bf893eede9db8756cc979dfd1</code></span>
+                        <button class="btn-copy-hash" onclick="copyHash('tvSha', this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+
+                <!-- Mobile APK Card -->
+                <div class="download-card" style="margin-bottom: 0;">
+                    <div class="download-badge-row">
+                        <span class="release-tag"><i class="fa-solid fa-mobile-screen"></i> Android Phone / Tablet</span>
+                        <span class="badge" style="background: rgba(0, 229, 255, 0.15); color: #38bdf8;">~43.7 MB</span>
+                    </div>
+                    <div class="download-card-title-row">
+                        <img src="assets/mobile_logo.png" alt="LANStream Mobile Logo" class="app-card-logo">
+                        <div>
+                            <h3>LANStream Mobile</h3>
+                            <span class="file-name">LANStream-Mobile.apk</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-bottom: 14px;">
+                        Embedded dual-protocol server (HTTP &amp; FTP) with instant CameraX QR sync, lossless audio broadcasting, and screen-off streaming with zero cloud dependence.
+                    </p>
+                    <a href="https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-Mobile.apk" class="btn-download-apk" target="_blank">
+                        <i class="fa-solid fa-download"></i> Download LANStream Mobile APK (v1.1)
+                    </a>
+                    <div class="checksum-bar">
+                        <span>SHA-256: <code class="checksum-code" id="mobileSha">a773680637db0d92481af0cb390af38fd867b034a7bb6d0da45e704c6ffd0c64</code></span>
+                        <button class="btn-copy-hash" onclick="copyHash('mobileSha', this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.1 Changelog Highlights -->
+            <div class="changelog-section">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 16px;">
+                    <i class="fa-solid fa-sparkles" style="color: #fbbf24;"></i> What's New in v1.1
+                </h3>
+
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-film" style="color: #00e5ff;"></i> LibVLC Media Engine Integration</h4>
+                    <ul class="changelog-list">
+                        <li>Migrated Android TV media playback from ExoPlayer to native <strong>LibVLC 3.6.2</strong> with hardware acceleration (<code>mediacodec_ndk</code>, <code>mediacodec_jni</code>).</li>
+                        <li>Full native decoding for complex 10-bit HEVC (H.265), high-bitrate Matroska MKVs with VBR/Cues, and stylized ASS/SSA subtitles.</li>
+                        <li>Multi-track audio stream switching (e.g. Hindi 5.1, English Atmos, regional tracks) directly via TV remote control.</li>
+                        <li>Integrated remote button actions: D-Pad Left/Right 10-second fast seek, Center/OK Play-Pause, Speed toggle (0.5x to 2.0x), and track cycling.</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-folder-tree" style="color: #fbbf24;"></i> Nova Video Player-Style Directory Browsing</h4>
+                    <ul class="changelog-list">
+                        <li><strong>Folders-First Sorting:</strong> Directories always appear at the top, followed by media files sorted alphabetically (A-Z).</li>
+                        <li><strong>4-Column Poster Grid View:</strong> High-density visual cards with category gradient banners, extension badges, and remote focus scaling.</li>
+                        <li><strong>Detailed List View:</strong> Full-width rows with complete file names, metadata tags, and quick-action play buttons.</li>
+                        <li><strong>Persistent Layout Toggle:</strong> Switch between Grid and List view with a single click; preference is remembered across app relaunches.</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-clock-rotate-left" style="color: #22c55e;"></i> Smart Resume Playback with D-Pad Prompt</h4>
+                    <ul class="changelog-list">
+                        <li><strong>Resume Playback Dialog:</strong> Clicking partially watched videos prompts an interactive TV dialog with <code>[Resume from XX:XX]</code> and <code>[Start from Beginning]</code>.</li>
+                        <li><strong>Watch Progress Indicators:</strong> Video poster cards and list rows display cyan progress bars and saved timestamp chips.</li>
+                        <li><strong>Auto-Save on Exit &amp; Pause:</strong> Playback timestamps automatically save when pausing, pressing Back, or backgrounding the TV app.</li>
+                        <li><strong>Auto-Clear on Completion:</strong> Automatically clears saved timestamps once videos are watched past 95% completion.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- PREVIOUS RELEASES ARCHIVE -->
+        <section style="margin-top: 50px;">
+            <div style="margin-bottom: 24px;">
+                <span class="section-tag">Release Archive</span>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff;">Previous Releases</h3>
+            </div>
+
+            <!-- v1.0.1 Stable -->
+            <div class="prev-release-item">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge blue" style="font-weight: 800; font-size: 0.85rem;">v1.0.1 Stable</span>
+                        <strong style="color: #fff; font-size: 1.1rem;">Initial Public Release</strong>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-regular fa-calendar"></i> October 29, 2026</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px;">
+                    First official release introducing zero-friction QR code pairing, dual HTTP/FTP streaming servers on mobile, and Leanback TV UI.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-Mobile.apk" class="btn btn-secondary" style="font-size: 0.82rem; padding: 8px 16px;" target="_blank">
+                        <i class="fa-solid fa-download"></i> Mobile APK (v1.0.1)
+                    </a>
+                    <a href="https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-TV.apk" class="btn btn-secondary" style="font-size: 0.82rem; padding: 8px 16px;" target="_blank">
+                        <i class="fa-solid fa-download"></i> TV APK (v1.0.1)
+                    </a>
+                    <a href="https://github.com/ayush2live/LANStream-Website/releases/tag/v1.0.1" class="btn btn-outline" style="font-size: 0.82rem; padding: 8px 16px;" target="_blank">
+                        <i class="fa-brands fa-github"></i> Release Notes
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY & INTEGRITY INSTRUCTIONS -->
+        <section class="glass-panel" style="margin-top: 40px; padding: 28px; border-radius: var(--radius-lg);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+                <i class="fa-solid fa-shield-halved" style="color: #22c55e; font-size: 1.4rem;"></i>
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Verifying Package Integrity</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px;">
+                To guarantee that your downloaded APK has not been altered or corrupted during download, you can verify its SHA-256 hash in PowerShell or terminal:
+            </p>
+            <div class="code-box" style="margin-bottom: 12px;">
+                <span class="code-tag">Windows PowerShell</span>
+                <code>Get-FileHash LANStream-TV.apk -Algorithm SHA256</code>
+            </div>
+            <div class="code-box">
+                <span class="code-tag">macOS / Linux Terminal</span>
+                <code>sha256sum LANStream-TV.apk</code>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">LAN<span>Stream</span></div>
+                <p>High-performance local-area media streaming ecosystem. Zero internet needed, 100% private, and open for everyone.</p>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 8px;">
+                    Created by <strong>Ayush Singh</strong> • Verified by Google Play Protect
+                </span>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#downloads">Downloads</a>
+                <a href="index.html#showcase">Showcase</a>
+                <a href="releases.html">Releases</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>GitHub &amp; Source</h4>
+                <a href="https://github.com/ayush2live/LANStream" target="_blank">Main Repository</a>
+                <a href="https://github.com/ayush2live/LANStream-Website" target="_blank">Website Repository</a>
+                <a href="https://github.com/ayush2live/LANStream-Website/releases" target="_blank">GitHub Releases</a>
+                <a href="https://github.com/ayush2live/LANStream-Website/issues" target="_blank">Report Issue</a>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 LANStream. Built for fast, lag-free 4K home entertainment.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script for Copy Buttons -->
+    <script>
+        function copyHash(elementId, btn) {
+            const code = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check" style="color: #22c55e;"></i> Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
