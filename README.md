@@ -15,7 +15,7 @@
 ### High-Performance Local-Area Media Streaming Ecosystem
 
 [![Live Portal](https://img.shields.io/badge/GitHub%20Pages-Live%20Portal-00E5FF?style=for-the-badge&logo=githubpages&logoColor=black)](https://ayush2live.github.io/LANStream-Website/)
-[![Release](https://img.shields.io/badge/Release-v1.0.1%20Stable-success?style=for-the-badge&logo=github)](https://github.com/ayush2live/LANStream-Website/releases/latest)
+[![Release](https://img.shields.io/badge/Release-v1.1%20Stable-success?style=for-the-badge&logo=github)](https://github.com/ayush2live/LANStream-Website/releases/latest)
 [![Google Play Protect](https://img.shields.io/badge/Play%20Protect-Verified%20Clean-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://github.com/ayush2live/LANStream-Website/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Android%20Phone%20%7C%20Android%20TV-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](https://github.com/ayush2live/LANStream/blob/main/LICENSE)
@@ -27,7 +27,7 @@
 <br/>
 
 > [!NOTE]
-> **🛡️ Google Play Protect Verified Clean • v1.0.1 Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or malicious code. Sideload and stream with complete peace of mind.
+> **🛡️ Google Play Protect Verified Clean • v1.1 Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or malicious code. Version 1.1 brings the powerful LibVLC media player engine, Nova-style directory browsing (Grid/List views), and smart resume playback with TV D-pad prompts.
 
 <br/>
 
@@ -45,8 +45,8 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 
 | Application | Target Hardware | Min OS | Package Asset | Direct Download |
 | :--- | :--- | :--- | :--- | :---: |
-| **📱 LANStream Mobile** | Android Smartphones &amp; Tablets | Android 8.0+ (API 26+) | `LANStream-Mobile.apk` (~52 MB) | [**Download Mobile APK (v1.0.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-Mobile.apk) |
-| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV.apk` (~6.9 MB) | [**Download TV APK (v1.0.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.0.1/LANStream-TV.apk) |
+| **📱 LANStream Mobile** | Android Smartphones &amp; Tablets | Android 8.0+ (API 26+) | `LANStream-Mobile.apk` (~43.7 MB) | [**Download Mobile APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-Mobile.apk) |
+| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV.apk` (~91.9 MB) | [**Download TV APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV.apk) |
 
 > [!TIP]
 > **Zero Compilation Required**: These APKs are production-ready binaries. Simply download and sideload directly onto your phone and television.
