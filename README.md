@@ -27,7 +27,7 @@
 <br/>
 
 > [!NOTE]
-> **🛡️ Google Play Protect Verified Clean • v1.1 Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or malicious code. Version 1.1 brings the powerful LibVLC media player engine, Nova-style directory browsing (Grid/List views), smart resume playback with TV D-pad prompts, and optimized R8 Single-DEX compilation.
+> **🛡️ Google Play Protect Verified Clean • v1.1 Production Release**: All release binaries have been scanned and verified 100% clean by Google Play Protect with zero security warnings, trackers, or telemetry. Version 1.1 brings the native **LibVLC 3.6.2** media player engine, **Nova-style directory browsing** (4-column Grid & List views), **hold-to-accelerate debounced seeking**, **per-folder focus memory**, **D-Pad remote navigation hardening**, **long-press quick actions**, comprehensive **TvTheme design system upgrades**, and **R8 Single-DEX** optimization.
 
 <br/>
 
@@ -99,33 +99,52 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 * **Real-Time Client Telemetry**: Live concurrent client counter, uptime clock, and auto-detecting Wi-Fi/Hotspot IP banner.
 
 ### 📺 LANStream TV (`:tv`)
-* **Hardware-Accelerated 4K Engine**: Media3 ExoPlayer decodes 4K UHD Remux, HDR10, and high-bitrate audio bitstreams natively on the TV GPU.
-* **Proprietary Range Seeker**: Custom network pipeline enables sub-second timeline scrubbing in 50GB+ MKV files without buffering from byte 0.
-* **10-Foot Remote D-Pad Navigation**: TV Material 3 interface with smooth D-Pad scaling, focus borders, and directory navigation.
-* **Audio &amp; Subtitle Control**: Mid-movie audio stream switching (Dolby, DTS, AAC), language tag normalization, and SSA/SRT/VTT subtitle support.
-* **Engineered for Low-RAM TVs**: Optimized R8 single-dex compilation and AOT speed profiling for fluid 60fps playback on 1GB RAM Android TVs.
-* **Ambient Themes**: Mountain Sunset, Cyberpunk Neon, Obsidian Gold, Deep Void, Midnight Sapphire, Aurora Borealis, and more.
+* **Hardware-Accelerated LibVLC Engine**: Powered by native **LibVLC 3.6.2** (`mediacodec_ndk`, `mediacodec_jni`) for direct decoding of 10-bit HEVC (H.265), high-bitrate Matroska MKVs with cue points, and stylized ASS/SSA subtitles.
+* **Nova Video Player-Style Browsing**: Folders-first sorting, high-density 4-column Poster Grid, full-width Detailed List View, and persistent layout memory across app relaunches.
+* **Hold-to-Accelerate Seeking**: Live visual timestamp preview with escalating steps (`10s` &rarr; `30s` &rarr; `60s`) committed to LibVLC after a 400ms debounce to eliminate LAN/SMB buffering choke.
+* **Smart Resume &amp; Long-Press Actions**: Remembers exact playback timestamps with cyan progress bars and `[Resume]` / `[Start from Beginning]` modals. Long-pressing OK or pressing `MENU` / `INFO` opens a dedicated quick actions sheet.
+* **TV Remote UX &amp; D-Pad Hardening**:
+  * *Safe Back at Root*: Prompts a *"Disconnect from server?"* modal instead of killing active sessions.
+  * *Google TV Compliance*: Exits directly to the Android TV launcher when Back is pressed from the disconnected start screen.
+  * *Per-Folder Focus Memory*: Auto-restores scroll position and refocuses the exact card when stepping up directories or leaving playback.
+  * *Top Bar Focus Recovery*: Clean upward focus from row 0 of Grid and List views to top bar controls.
+* **TvTheme Design System**: Neutral 10% translucent white card borders (`#1AFFFFFF`), 2.5dp ice-white focus core (`#F1F5F9`) with cyan glow, anti-halation text, 72% opacity containers, and dynamic wallpaper bleed guards.
+* **Engineered for Low-RAM TVs (R8 Single-DEX)**: Deep R8 full-mode tree-shaking compresses the app into a single `classes.dex` file (<65,536 methods) at **~86.5 MB** with zero multidex latency and native AOT speed profiling.
+
+---
+
+## 🌟 What's New in v1.1
+
+* **LibVLC 3.6.2 Engine:** Replaced ExoPlayer on Android TV with LibVLC for 10-bit HEVC, MKV cues/chapters, and ASS/SSA subtitles.
+* **Nova Directory Browsing:** 4-Column Grid &amp; List layouts with folders-first sorting and persistent layout toggle.
+* **Debounced Seeking:** Escalating hold-to-accelerate seek (10s &rarr; 30s &rarr; 60s) committed once after a 400ms debounce.
+* **Safe D-Pad Navigation:** Disconnect confirmation dialog at root `/`, direct exit on Home, and per-folder focus memory.
+* **Aspect Ratio Switcher:** Live HUD toggle cycling between `Fit`, `16:9`, `4:3`, and `2.35:1`.
+* **Folder Playlist Controls:** `[⏮ Prev]` and `[⏭ Next]` buttons and remote media keys for continuous folder playback.
+* **Media Quick Actions:** Long-press OK or `MENU` button opens instant Resume, Play from Start, Clear Progress, and File Info.
+* **TvTheme Overhaul:** Ice-white focus core, neutral glass card borders, halation-free text (`#F1F5F9`), and wallpaper bleed protection.
+* **R8 Single-DEX:** Single `classes.dex` packaging under the 64K limit for instant boot and 60fps Leanback rendering.
 
 ---
 
 ## 📲 Installation &amp; Sideloading Guide
 
 ### 1. Mobile Phone / Tablet Installation
-1. Download **`LANStream-Mobile.apk`** from [GitHub Releases](https://github.com/ayush2live/LANStream-Website/releases/latest).
+1. Download **`LANStream-Mobile-v1.1.apk`** from [GitHub Releases](https://github.com/ayush2live/LANStream-Website/releases/latest).
 2. Tap the downloaded file. When prompted, allow **"Install unknown apps"** for your browser.
 3. Open the app and grant storage permissions when requested.
 
 ### 2. Android TV Sideloading (Choose Any Method)
 
 #### Method A: USB Flash Drive (Easiest)
-1. Download **`LANStream-TV.apk`** on your computer or phone.
+1. Download **`LANStream-TV-v1.1.apk`** on your computer or phone.
 2. Copy the APK to a FAT32-formatted USB flash drive.
 3. Plug the drive into your Android TV / Google TV.
 4. Open any TV File Manager (such as *File Commander* or *AnExplorer* from Google Play) and click the APK to install.
 
 #### Method B: Send Files to TV (Wireless)
 1. Install the free **Send Files to TV (SFTV)** app from Google Play on both your phone and television.
-2. Download `LANStream-TV.apk` on your phone.
+2. Download `LANStream-TV-v1.1.apk` on your phone.
 3. Use SFTV to send the APK wirelessly to your TV.
 4. On the TV, open the received file using a file manager to install.
 
@@ -133,7 +152,7 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 Connect your PC to your TV over Wi-Fi and install with one command:
 ```powershell
 adb connect <your-tv-ip>:5555
-adb install -r LANStream-TV.apk
+adb install -r LANStream-TV-v1.1.apk
 adb shell cmd package compile -m speed -f com.lanstream.tv
 ```
 
