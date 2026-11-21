@@ -45,8 +45,8 @@ Download pre-compiled, signed APK binaries directly from [**GitHub Releases**](h
 
 | Application | Target Hardware | Min OS | Package Asset | Direct Download |
 | :--- | :--- | :--- | :--- | :---: |
-| **📱 LANStream Mobile** | Android Smartphones &amp; Tablets | Android 8.0+ (API 26+) | `LANStream-Mobile.apk` (~43.7 MB) | [**Download Mobile APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-Mobile.apk) |
-| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV.apk` (~86.5 MB, Single-DEX) | [**Download TV APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV.apk) |
+| **📱 LANStream Mobile** | Android Smartphones &amp; Tablets | Android 8.0+ (API 26+) | `LANStream-Mobile-v1.1.apk` (~43.7 MB) | [**Download Mobile APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-Mobile-v1.1.apk) |
+| **📺 LANStream TV** | Android TV &amp; Google TV | Android 8.0+ (API 26+) | `LANStream-TV-v1.1.apk` (~86.5 MB, Single-DEX) | [**Download TV APK (v1.1)**](https://github.com/ayush2live/LANStream-Website/releases/download/v1.1/LANStream-TV-v1.1.apk) |
 
 > [!TIP]
 > **Zero Compilation Required**: These APKs are production-ready binaries. Simply download and sideload directly onto your phone and television.
