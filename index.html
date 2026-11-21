@@ -354,10 +354,10 @@
                         <ul>
                             <li><strong>Controls:</strong> Full TV Remote Support</li>
                             <li><strong>Screen QR:</strong> Shows QR Code for Pairing</li>
-                            <li><strong>Video Engine:</strong> Fast Hardware 4K Playback</li>
-                            <li><strong>Instant Seek:</strong> Rewind &amp; Fast-Forward with No Lag</li>
-                            <li><strong>Audio:</strong> Switch Audio Tracks &amp; Languages</li>
-                            <li><strong>Subtitles:</strong> Built-in Subtitle Support</li>
+                            <li><strong>LibVLC Engine:</strong> Hardware 4K, 10-bit HEVC &amp; MKV</li>
+                            <li><strong>Directory Browsing:</strong> Nova-Style Grid &amp; List Views</li>
+                            <li><strong>Smart Resume:</strong> D-Pad Prompt &amp; Progress Bar</li>
+                            <li><strong>Audio &amp; Subtitles:</strong> Hindi 5.1, Multi-Track &amp; ASS</li>
                         </ul>
                     </div>
                 </div>
@@ -456,8 +456,16 @@
                         
                         <div class="feature-checklist">
                             <div class="check-item">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div><strong>Comfortable TV Remote Controls:</strong> Smoothly move across your movie and music collections using your TV remote.</div>
+                                <i class="fa-solid fa-bolt" style="color: #38bdf8;"></i>
+                                <div><strong>Native LibVLC 3.6.2 Engine:</strong> Direct hardware decoding for 10-bit HEVC (H.265), MKV with chapter cues, and stylized ASS/SSA subtitles with zero lag.</div>
+                            </div>
+                            <div class="check-item">
+                                <i class="fa-solid fa-folder-tree" style="color: #fbbf24;"></i>
+                                <div><strong>Nova-Style Directory Browsing:</strong> Folders-first sorting with 4-column poster Grid View and detailed List View toggles, remembered across app relaunches.</div>
+                            </div>
+                            <div class="check-item">
+                                <i class="fa-solid fa-clock-rotate-left" style="color: #22c55e;"></i>
+                                <div><strong>Smart Resume Playback:</strong> Remembers playback timestamps, shows an interactive TV D-Pad prompt ("Resume from XX:XX" / "Start from Beginning"), and displays watch progress bars.</div>
                             </div>
                             <div class="check-item">
                                 <i class="fa-solid fa-circle-check"></i>
@@ -469,19 +477,15 @@
                             </div>
                             <div class="check-item">
                                 <i class="fa-solid fa-circle-check"></i>
-                                <div><strong>Instant Rewind &amp; Seeking:</strong> Jump directly to any scene in large movie or music files without waiting for buffering.</div>
+                                <div><strong>Instant Rewind &amp; Seeking:</strong> D-Pad 10-second skip and speed control without waiting for buffering.</div>
                             </div>
                             <div class="check-item">
                                 <i class="fa-solid fa-circle-check"></i>
-                                <div><strong>Audio &amp; Subtitle Selection:</strong> Switch audio languages and toggle subtitles on screen with your remote.</div>
+                                <div><strong>Audio &amp; Subtitle Selection:</strong> Switch audio languages (Hindi 5.1, English) and toggle subtitles on screen with your remote.</div>
                             </div>
                             <div class="check-item">
                                 <i class="fa-solid fa-circle-check"></i>
-                                <div><strong>9 Wallpaper Themes:</strong> Personalize your TV display with stylish colors and backgrounds.</div>
-                            </div>
-                            <div class="check-item">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div><strong>Smooth on All TVs:</strong> Lightweight and highly optimized to run at fluid 60fps even on budget smart TVs.</div>
+                                <div><strong>9 Wallpaper Themes:</strong> Personalize your TV display with stylish ambient colors and backgrounds.</div>
                             </div>
                         </div>
 
@@ -496,9 +500,12 @@
                         <table>
                             <tr><td>Application ID</td><td><code>com.lanstream.tv</code></td></tr>
                             <tr><td>Platform</td><td><code>Android TV &amp; Google TV (8.0+)</code></td></tr>
-                            <tr><td>Remote Control</td><td><code>Full D-Pad Remote Navigation</code></td></tr>
-                            <tr><td>Audio Playback</td><td><code>MP3, FLAC, WAV, AAC, M4A, OGG</code></td></tr>
-                            <tr><td>Subtitles</td><td><code>Embedded SRT, ASS, SSA, VTT</code></td></tr>
+                            <tr><td>Media Engine</td><td><code>LibVLC 3.6.2 (Native C/C++ HW Accelerated)</code></td></tr>
+                            <tr><td>Directory Browsing</td><td><code>Nova-Style 4-Col Grid &amp; Detailed List Views</code></td></tr>
+                            <tr><td>Resume Capabilities</td><td><code>D-Pad Prompt, Progress Bars &amp; Auto-Save</code></td></tr>
+                            <tr><td>Remote Control</td><td><code>Full D-Pad Remote Navigation (10s Seek, Track Cycle)</code></td></tr>
+                            <tr><td>Audio Playback</td><td><code>MP3, FLAC, WAV, AAC, M4A, OGG, Multi-Track (5.1/7.1)</code></td></tr>
+                            <tr><td>Subtitles</td><td><code>Stylized ASS, SSA, Embedded SRT, VTT</code></td></tr>
                             <tr><td>Security Status</td><td><code>Google Play Protect Verified</code></td></tr>
                         </table>
 
@@ -545,6 +552,14 @@
                         <tr>
                             <td><strong>Internet Dependency:</strong> Most streaming apps stop working immediately if your home internet connection goes down.</td>
                             <td><span class="badge amber" style="display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; background: rgba(251, 191, 36, 0.18); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.25);">100% Offline Ready</span> Works completely offline over local Wi-Fi or directly from your phone's personal hotspot.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subtitles &amp; Audio Tracks:</strong> Standard casting drops stylized subtitles and cannot switch multi-language audio (e.g. Hindi 5.1/English).</td>
+                            <td><span class="badge blue" style="display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; background: rgba(0, 229, 255, 0.15); color: #00e5ff;">LibVLC Powered</span> Native decoding for 10-bit HEVC, MKV cues/chapters, ASS/SSA subtitles, and on-the-fly audio track switching.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Playback Continuity:</strong> Mirroring disconnects when leaving the app, losing your timestamp and forcing you to restart from the beginning.</td>
+                            <td><span class="badge green" style="display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; background: rgba(0, 230, 118, 0.15); color: #00e676;">Smart Resume</span> Remembers exact timestamps across sessions, displays watch progress bars, and prompts to resume with your TV remote.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -619,6 +634,24 @@
                             <td>Auto</td>
                             <td>Jumps straight to the exact second in the movie file without reloading from the start.</td>
                             <td>Sub-second rewinding and fast-forwarding, even in 50GB 4K movie files.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge blue">LibVLC Hardware Decoding</span></td>
+                            <td>Native</td>
+                            <td>Direct C/C++ hardware acceleration for 10-bit HEVC, MKV cues/chapters &amp; SSA/ASS subtitles.</td>
+                            <td>Zero-transcode direct playback with instant multi-language audio track switching.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">Nova-Style Browsing</span></td>
+                            <td>UI/D-Pad</td>
+                            <td>Folders-first hierarchy with dynamic 4-column poster Grid and detailed List View toggles.</td>
+                            <td>Effortlessly browse massive media libraries with Android TV remote navigation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge green">Smart Resume System</span></td>
+                            <td>Storage</td>
+                            <td>Persistent timestamp storage, visual watch progress bars, and TV D-Pad resume prompt dialog.</td>
+                            <td>Seamlessly pick up where you left off or start fresh with a single remote click.</td>
                         </tr>
                     </tbody>
                 </table>
