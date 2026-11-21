@@ -241,7 +241,7 @@
                         <i class="fa-solid fa-download"></i> Download LANStream TV APK (v1.1)
                     </a>
                     <div class="checksum-bar">
-                        <span>SHA-256: <code class="checksum-code" id="tvSha">a6a628d6448ffe19c9cccc3ac71d6ad8a157b8938a1b9a136e64067f0f14e53b</code></span>
+                        <span>SHA-256: <code class="checksum-code" id="tvSha">cf310af1e75a6a871eaf9afdd67ab9c01d12fe94bdcd88cf6626785b45fa7786</code></span>
                         <button class="btn-copy-hash" onclick="copyHash('tvSha', this)"><i class="fa-regular fa-copy"></i> Copy</button>
                     </div>
                 </div>
@@ -278,43 +278,68 @@
                     <i class="fa-solid fa-sparkles" style="color: #fbbf24;"></i> What's New in v1.1
                 </h3>
 
+                <!-- Category 1: Navigation & D-Pad Logic -->
                 <div class="changelog-category">
-                    <h4><i class="fa-solid fa-film" style="color: #00e5ff;"></i> LibVLC Media Engine Integration</h4>
+                    <h4><i class="fa-solid fa-gamepad" style="color: #38bdf8;"></i> TV Remote UX &amp; D-Pad Navigation Hardening</h4>
                     <ul class="changelog-list">
-                        <li>Migrated Android TV media playback from ExoPlayer to native <strong>LibVLC 3.6.2</strong> with hardware acceleration (<code>mediacodec_ndk</code>, <code>mediacodec_jni</code>).</li>
-                        <li>Full native decoding for complex 10-bit HEVC (H.265), high-bitrate Matroska MKVs with VBR/Cues, and stylized ASS/SSA subtitles.</li>
-                        <li>Multi-track audio stream switching (e.g. Hindi 5.1, English Atmos, regional tracks) directly via TV remote control.</li>
-                        <li>Integrated remote button actions: D-Pad Left/Right 10-second fast seek, Center/OK Play-Pause, Speed toggle (0.5x to 2.0x), and track cycling.</li>
+                        <li><strong>Safe Back at Root (<code>/</code>):</strong> Pressing Back at the top-level directory now displays a lightweight <em>"Disconnect from server?"</em> confirmation modal instead of accidentally killing the session and forcing a re-pair.</li>
+                        <li><strong>Direct Home Screen Exit:</strong> Aligned with official Google TV App Quality Guidelines—pressing Back from the disconnected start screen exits directly to the Android TV launcher without redundant exit popups.</li>
+                        <li><strong>Per-Folder Focus Memory:</strong> Navigating up to parent directories or returning from the video player restores scroll position and automatically re-focuses the exact folder or media card you just left.</li>
+                        <li><strong>Top Bar Focus Path:</strong> Pressing D-Pad UP from row 0 of both the 4-column Grid and List view cleanly transfers remote focus to the Top Bar controls without getting stuck.</li>
                     </ul>
                 </div>
 
+                <!-- Category 2: Playback Engine & Seeking -->
                 <div class="changelog-category">
-                    <h4><i class="fa-solid fa-folder-tree" style="color: #fbbf24;"></i> Nova Video Player-Style Directory Browsing</h4>
+                    <h4><i class="fa-solid fa-film" style="color: #00e5ff;"></i> LibVLC Media Engine &amp; Debounced Seeking</h4>
+                    <ul class="changelog-list">
+                        <li><strong>LibVLC 3.6.2 Engine:</strong> Complete native decoding with hardware acceleration (<code>mediacodec_ndk</code>, <code>mediacodec_jni</code>) for 10-bit HEVC, Matroska MKVs with cue points, and complex ASS/SSA subtitles.</li>
+                        <li><strong>Hold-to-Accelerate Seeking:</strong> Seeking Left/Right updates a live visual timestamp preview instantly, escalating step sizes (<code>10s</code> &rarr; <code>30s</code> &rarr; <code>60s</code>) while held, and commits to LibVLC after a 400ms debounce to eliminate LAN/SMB buffering choke.</li>
+                        <li><strong>Live Aspect Ratio Switcher:</strong> Replaced redundant on-screen exit buttons with a multi-ratio toggle (<code>Fit</code>, <code>16:9</code>, <code>4:3</code>, <code>2.35:1</code>) directly in the HUD control bar.</li>
+                        <li><strong>Folder Playlist Navigation:</strong> Added <code>[⏮ Prev]</code> and <code>[⏭ Next]</code> buttons and wired remote media keys (<code>KEYCODE_MEDIA_NEXT</code> / <code>PREVIOUS</code>) to skip sequentially through files in the current folder.</li>
+                        <li><strong>Smart HUD Auto-Hide:</strong> Pauses the 5-second auto-hide timer while video playback is paused, and maintains subtle ambient HUD visibility during audio-only playback (<code>.mp3</code>, <code>.flac</code>, <code>.wav</code>) to protect OLED panels from pure black screens.</li>
+                        <li><strong>Debounced Multi-Track Switching:</strong> Smooth track switching for multi-audio streams (e.g. Hindi 5.1 / English Atmos) and subtitles without audio dropouts or player freezing.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Media Quick Actions -->
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-bars-staggered" style="color: #c084fc;"></i> Long-Press Media Quick Actions Modal</h4>
+                    <ul class="changelog-list">
+                        <li><strong>Remote Menu &amp; Long-Press OK:</strong> Long-pressing Center/OK or pressing remote <code>MENU</code> / <code>INFO</code> on any media card opens a dedicated action sheet.</li>
+                        <li><strong>Instant Action Shortcuts:</strong> Quickly select <em>Resume from Timestamp</em>, <em>Play from Beginning</em> (bypasses Smart Resume), <em>Clear Saved Progress</em>, or view full <em>File Information</em>.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: Design System -->
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-palette" style="color: #ec4899;"></i> TvTheme Design System &amp; Anti-Bloom Upgrades</h4>
+                    <ul class="changelog-list">
+                        <li><strong>Neutral Glass Card Borders:</strong> Changed unfocused borders from faint cyan to neutral 10% translucent white (<code>#1AFFFFFF</code>), removing the grid "wireframe" look.</li>
+                        <li><strong>High-Visibility Ice-White Focus Core:</strong> Active focus border uses a 2.5dp crisp ice-white core (<code>#F1F5F9</code>) with an electric cyan halo glow, ensuring cards pop unmistakably over dark or vibrant movie posters.</li>
+                        <li><strong>Anti-Halation &amp; Contrast Tuning:</strong> Softened primary text to <code>#F1F5F9</code> to eliminate OLED/HDR bloom in dark environments; raised muted text to <code>#7D8FA6</code> for WCAG AA compliance (5.5:1); unified brand electric blue to <code>#1A64E6</code> (&gt;4.9:1).</li>
+                        <li><strong>Wallpaper Bleed Guard:</strong> Raised card inner container opacity to 72% (<code>#B80A0F1D</code>) and introduced an atmospheric backdrop scrim, preventing bright orange and magenta gradients from bleeding into metadata on dynamic themes.</li>
+                        <li><strong>Standardized Status Tokens:</strong> Added comprehensive <code>LanStreamError*</code> and <code>LanStreamWarning*</code> design tokens for connection and timeout notifications.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 5: Nova Browsing & Resume -->
+                <div class="changelog-category">
+                    <h4><i class="fa-solid fa-folder-tree" style="color: #fbbf24;"></i> Nova Video Player-Style Directory Browsing &amp; Resume</h4>
                     <ul class="changelog-list">
                         <li><strong>Folders-First Sorting:</strong> Directories always appear at the top, followed by media files sorted alphabetically (A-Z).</li>
-                        <li><strong>4-Column Poster Grid View:</strong> High-density visual cards with category gradient banners, extension badges, and remote focus scaling.</li>
-                        <li><strong>Detailed List View:</strong> Full-width rows with complete file names, metadata tags, and quick-action play buttons.</li>
-                        <li><strong>Persistent Layout Toggle:</strong> Switch between Grid and List view with a single click; preference is remembered across app relaunches.</li>
+                        <li><strong>4-Column Poster Grid &amp; Detailed List Views:</strong> High-density cards with category banners and full-width list rows with persistent layout memory across relaunches.</li>
+                        <li><strong>Smart Resume Playback:</strong> Remembers exact playback timestamps; automatically prompts interactive <code>[Resume]</code> / <code>[Start from Beginning]</code> modals and displays cyan progress bars on partially watched media.</li>
                     </ul>
                 </div>
 
-                <div class="changelog-category">
-                    <h4><i class="fa-solid fa-clock-rotate-left" style="color: #22c55e;"></i> Smart Resume Playback with D-Pad Prompt</h4>
-                    <ul class="changelog-list">
-                        <li><strong>Resume Playback Dialog:</strong> Clicking partially watched videos prompts an interactive TV dialog with <code>[Resume from XX:XX]</code> and <code>[Start from Beginning]</code>.</li>
-                        <li><strong>Watch Progress Indicators:</strong> Video poster cards and list rows display cyan progress bars and saved timestamp chips.</li>
-                        <li><strong>Auto-Save on Exit &amp; Pause:</strong> Playback timestamps automatically save when pausing, pressing Back, or backgrounding the TV app.</li>
-                        <li><strong>Auto-Clear on Completion:</strong> Automatically clears saved timestamps once videos are watched past 95% completion.</li>
-                    </ul>
-                </div>
-
+                <!-- Category 6: R8 Performance -->
                 <div class="changelog-category">
                     <h4><i class="fa-solid fa-microchip" style="color: #34d399;"></i> Optimized R8 Single-DEX Compilation &amp; Performance</h4>
                     <ul class="changelog-list">
                         <li><strong>Single-DEX Packaging:</strong> Deep R8 full-mode tree-shaking compresses the entire Android TV application into a single <code>classes.dex</code> file (~42k methods), comfortably below the 64K multidex threshold.</li>
                         <li><strong>Zero Multidex Latency:</strong> Eliminates runtime multidex extraction and class verification overhead, ensuring instant cold-start boot times on smart TVs.</li>
-                        <li><strong>Resource Shrinking:</strong> Stripped unused resources and dead layouts, reducing TV APK download size to <strong>~86.5 MB</strong>.</li>
-                        <li><strong>Bytecode Log Stripping:</strong> Stripped verbose and debug <code>Log</code> invocations at R8 compilation to reduce CPU overhead and garbage collection pauses on quad-core TV processors.</li>
+                        <li><strong>Resource &amp; Log Stripping:</strong> Stripped unused resources and bytecode debug logging, keeping the TV APK compact at <strong>~86.5 MB</strong>.</li>
                         <li><strong>AOT ART Speed Compilation:</strong> Pre-compiled natively on-device (<code>cmd package compile -m speed</code>) for fluid 60fps Leanback UI animations.</li>
                     </ul>
                 </div>
